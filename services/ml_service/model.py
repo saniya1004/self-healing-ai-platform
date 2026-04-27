@@ -1,0 +1,12 @@
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Train once at startup
+X = np.array([[1], [2], [3], [4]])
+y = np.array([2, 4, 6, 8])
+
+model = LinearRegression()
+model.fit(X, y)
+
+def predict(value: float):
+    return float(model.predict([[value]])[0])
